@@ -60,7 +60,6 @@ json
 GET /:shortId
 Example:
 GET http://localhost:8000/d9WqcKvI_
-Redirects to the original URL.
 
 3️. Get URL Analytics
 GET /url/analytics/:shortId
