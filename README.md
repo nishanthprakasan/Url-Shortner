@@ -5,7 +5,6 @@ A simple URL Shortener built using Node.js, Express.js, and MongoDB. This API le
 - Redirect users from the short URL to the original URL  
 - Track analytics such as the number of clicks and visit history  
 
----
 
 Project Structure  
 ```
@@ -29,7 +28,6 @@ Tech Stack
 - Mongoose – ODM for MongoDB  
 - shortid – Library to generate short IDs  
 
----
 
 Installation
 
@@ -66,7 +64,7 @@ Server will start at [http://localhost:8000](http://localhost:8000/)
 API Endpoints
 
 1. Create a Short URL  
-**POST** `/url`  
+POST `/url`  
 Request Body:  
 ```
 { 
@@ -81,14 +79,14 @@ Response:
 ```
 
 2. Redirect to Original URL  
-**GET** `/:shortId`  
+GET `/:shortId`  
 Example:  
 ```
 GET http://localhost:8000/d9WqcKvI_
 ```
 
 3. Get URL Analytics  
-**GET** `/url/analytics/:shortId`  
+GET `/url/analytics/:shortId`  
 Example:  
 ```
 GET http://localhost:8000/url/analytics/shortID123
@@ -104,7 +102,6 @@ Response:
 }
 ```
 
----
 
 Quick cURL Examples
 
@@ -125,7 +122,6 @@ curl -L http://localhost:8000/d9WqcKvI_
 curl http://localhost:8000/url/analytics/d9WqcKvI_
 ```
 
----
 
 Future Improvements  
 - Add user authentication for URL management  
@@ -133,7 +129,6 @@ Future Improvements
 - Add custom alias support  
 - Provide a frontend UI  
 
----
 
 Developed by Nishanth Prakasan  
 A simple and extensible URL shortener API.
