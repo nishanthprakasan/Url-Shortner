@@ -17,8 +17,7 @@ async function generateNewShortURL(req, res) {
             redirectUrl: body.url,
             visitHistory: [],
         });
-
-        return res.json({ id: shortID });
+        return res.render('home', {id: shortID});
     } catch (err) {
         console.error("Error creating short URL:", err);
         return res.status(500).json({ error: "Internal server error" });
@@ -59,8 +58,14 @@ async function getAnalyticsById(req, res) {
     }
 }
 
+async function getAnalytics(req, res) {
+    const allUsers = await URL.find({});
+    return res.render('analytics', {allUsers: allUsers});
+}
+
 module.exports = {
     generateNewShortURL,
     redirectShortURL,
     getAnalyticsById,
+    getAnalytics,
 };
