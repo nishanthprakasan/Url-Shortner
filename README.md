@@ -109,7 +109,7 @@ Response:
 
 Quick cURL Examples
 
-1. Creating a short URL  
+1. Creating a short URL  (using custom post request)
 ```
 curl -X POST http://localhost:8000/api/url \
 -H "Content-Type: application/json" \
