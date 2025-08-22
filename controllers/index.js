@@ -15,6 +15,7 @@ async function generateNewShortURL(req, res) {
         await URL.create({
             shortId: shortID,
             redirectUrl: body.url,
+            createdBy: req.user._id,
             visitHistory: [],
         });
         return res.render('home', {id: shortID});
@@ -59,7 +60,9 @@ async function getAnalyticsById(req, res) {
 }
 
 async function getAnalytics(req, res) {
-    const allUsers = await URL.find({});
+    console.log(req.user._id);
+    const allUsers = await URL.find({createdBy:req.user._id});
+    console.log(allUsers);
     return res.render('analytics', {allUsers: allUsers});
 }
 
